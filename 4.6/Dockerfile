@@ -1,11 +1,8 @@
-FROM node:4.6
+FROM kkarczmarczyk/node-yarn:4.6
 
-MAINTAINER Kamil Karczmarczyk <kkarczmarczyk@gmail.com>
+MAINTAINER Jeromy Maligie <jmaligie@gmail.com>
 
-# Global install yarn package manager
-RUN apt-get update && apt-get install -y curl apt-transport-https && \
-    curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add - && \
-    echo "deb https://dl.yarnpkg.com/debian/ stable main" | tee /etc/apt/sources.list.d/yarn.list && \
-    apt-get update && apt-get install -y yarn
+# Global install flow requirements
+RUN apt-get update && apt-get install -y ocaml libelf-dev
 
 WORKDIR /workspace
