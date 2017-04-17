@@ -1,9 +1,8 @@
-FROM node:4.3.2-wheezy
+FROM kkarczmarczyk/node-yarn:4.3.2-wheezy
 
-MAINTAINER Kamil Karczmarczyk <kkarczmarczyk@gmail.com>
+MAINTAINER Jeromy Maligie <jmaligie@gmail.com>
 
-# Global install yarn package manager
-RUN npm set progress=false && \
-    npm install -g --progress=false yarn
+# Global install flow requirements
+RUN apt-get update && apt-get install -y ocaml libelf-dev
 
 WORKDIR /workspace

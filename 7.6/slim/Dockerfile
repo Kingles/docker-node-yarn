@@ -1,4 +1,4 @@
-FROM kkarczmarczyk/node-yarn:4.6-wheezy
+FROM kkarczmarczyk/node-yarn:7.6-slim
 
 MAINTAINER Jeromy Maligie <jmaligie@gmail.com>
 
